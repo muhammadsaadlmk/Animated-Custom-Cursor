@@ -1,0 +1,68 @@
+<!-- ---- Animated Custom Cursor @code_wars_official ----
+
+ to chnage or use other cursors
+
+there are total 7 folder like cursor1 , cursor2, etc...
+which contains many frames.
+
+cursor1 -> 3 frames   -- cursor1 is folder name and 3frames is framecount
+cursor2 -> 3 frames
+cursor3 -> 4 frames
+cursor4 -> 2 frames
+cursor5 -> 4 frames
+cursor6 -> 3 frames
+cursor7 -> 3 frames
+
+Now to chnage cursor. goto index.html   and
+
+chnage the Folder and Framecount in script like this
+
+const folder = "cursor4";  
+const frameCount = 2;
+
+If You have any doubght please DM us. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pure Animated Cursor via URL()</title>
+  <style>
+    body {
+      background: white;
+      color: white;
+      font-family: sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+   
+  // Chnage folder and framecount here 
+  const folder = "cursor7";  
+  const frameCount = 3; 
+  
+  const frames = [];
+
+  for (let i = 1; i <= frameCount; i++) {
+    frames.push(`${folder}/frame${i}.png`);
+  }
+
+  let index = 0;
+  const fps = 10;
+
+  setInterval(() => {
+    document.body.style.cursor =
+     `url(${frames[index]}), auto`;
+    index = (index + 1) % frames.length;
+  }, 2000 / fps);
+</script>
+
+</body>
+</html>
